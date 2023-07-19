@@ -1,10 +1,14 @@
 import Link from "next/link";
 import styles from "../../styles/page.module.css";
+import Sidebar from "../../componentes/Sidebar";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Link href="/ships">Ships</Link>
-    </main>
+    <div className={styles.container}>
+      <Sidebar />
+      <main className={styles.content}>
+        <span>Hello</span>
+      </main>
+    </div>
   );
 }
