@@ -1,5 +1,6 @@
 import styles from "../../styles/page.module.css";
-import Layout from "../../src/app/layout";
+import RootLayout from "../../src/app/layout";
+import Link from "next/link";
 
 interface ShipMainProps {
   id: number;
@@ -18,18 +19,20 @@ const ships: ShipMainPropsArray = [
 
 export default function Home({ id, name }: ShipMainProps): JSX.Element {
   return (
-    <main className={styles.main}>
-      <h1>SHIPS</h1>
-      <section className={styles.section}>
-        <ul className={styles.grid}>
-          {ships.map((ship: ShipMainProps) => (
-            <li className={styles.li} key={ship.id}>
-              <div>{ship.name}</div>
-              <span>{ship.id}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </main>
+    <RootLayout>
+      <main className={styles.main}>
+        <h1>SHIPS</h1>
+        <section className={styles.section}>
+          <ul className={styles.grid}>
+            {ships.map((ship: ShipMainProps) => (
+              <li className={styles.li} key={ship.id}>
+                <div>{ship.name}</div>
+                <span>{ship.id}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
+    </RootLayout>
   );
 }
